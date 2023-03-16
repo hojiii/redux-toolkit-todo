@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { __addTodo } from "../redux/modules/todos";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../component/Button";
 
 function Form() {
@@ -43,6 +43,9 @@ function Form() {
         />
         <Button type="submit">작성하기</Button>
       </form>
+      <Link to="/">
+        <Button>이전으로</Button>
+      </Link>
     </div>
   );
 }
