@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import List from "../component/List";
@@ -25,10 +24,24 @@ const Headerbox = styled.div`
 
 function Home() {
   const navigate = useNavigate();
-
+  // const dispatch = useDispatch();
+  // const { isLoding, error, todos } = useSelector((state) => {
+  //   return state.todos;
+  // });
   const navigatetoForm = () => {
     navigate("/form");
   };
+
+  // useEffect(() => {
+  //   dispatch(__getTodos());
+  // }, []);
+
+  // if (isLoding) {
+  //   return <div>로딩중...</div>;
+  // }
+  // if (error) {
+  //   return <div>{error.message}</div>;
+  // }
 
   return (
     <Layout>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { deleTodo, finTodo, fixTodo } from "../redux/modules/todos";
+
+import { __delTodo, __finTodo, __fixTodo } from "../redux/modules/todos";
 import Button from "./Button";
 
 const Stbox = styled.div`
@@ -56,7 +57,7 @@ function Card(props) {
           </div>
           <button
             onClick={(e) => {
-              dispatch(fixTodo([todo, updates]));
+              dispatch(__fixTodo([todo, updates]));
               setFix((fix) => !fix);
             }}
           >
@@ -75,10 +76,13 @@ function Card(props) {
             >
               수정
             </button>
-            <Button color={"red"} onClick={(e) => dispatch(deleTodo(todo))}>
+            <Button color={"red"} onClick={(e) => dispatch(__delTodo(todo.id))}>
               삭제
             </Button>
-            <Button color={"blue"} onClick={(e) => dispatch(finTodo(todo))}>
+            <Button
+              color={"#78E150"}
+              onClick={(e) => dispatch(__finTodo(todo))}
+            >
               {todo.isDone ? "취소" : "완료"}
             </Button>
           </div>
